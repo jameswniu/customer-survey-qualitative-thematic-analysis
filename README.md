@@ -69,9 +69,17 @@ Three things that only show up at runtime:
 
 ## How It Works
 
-The full architecture, every stage and both models, with the colour showing which model owns which step:
+Every stage, and which model owns it. Amber is Claude Opus, blue is GPT-5.1, and everything
+grey is deterministic Python, which is where the three guarantees are enforced rather than requested.
 
-```mermaid
+<p align="center">
+  <img src="assets/architecture.svg" alt="Architecture: an Excel file passes through column discovery, question inference, and a four-stage analysis engine out to three artifacts, with each box coloured by which model owns that step" width="100%">
+</p>
+
+<details>
+<summary>Graph source, for agents and tooling</summary>
+
+```mmd
 %%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 26, 'rankSpacing': 52, 'padding': 16}}}%%
 flowchart TB
     subgraph Input["Input"]
@@ -167,6 +175,8 @@ flowchart TB
     style Processing fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
     style Output fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
 ```
+
+</details>
 
 ## The receipts
 
