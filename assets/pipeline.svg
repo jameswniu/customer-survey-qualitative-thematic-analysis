@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" role="img" aria-label="Pipeline: an Excel file is scanned for question columns, the question is inferred from the answers, themes are clustered and every participant assigned, quotes are verified, and a summary is written" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bgp" x1="0" y1="0" x2="0.75" y2="1">
+    <stop offset="0" stop-color="#12161c"/><stop offset="0.55" stop-color="#0c1013"/><stop offset="1" stop-color="#080a0d"/>
+  </linearGradient>
+  <pattern id="dotp" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#161d26"/></pattern>
+  <linearGradient id="ndp" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#19212b"/><stop offset="1" stop-color="#111820"/>
+  </linearGradient>
+  <linearGradient id="rlp" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3987e5" stop-opacity="0.95"/><stop offset="1" stop-color="#3987e5" stop-opacity="0"/>
+  </linearGradient>
+  <marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a6673"/></marker>
+  <marker id="argp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#199e70"/></marker>
+  <marker id="arop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d95926"/></marker>
+  <marker id="arbp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3987e5"/></marker>
+</defs>
+<rect x="0" y="0" width="900" height="580" fill="url(#bgp)"/>
+<rect x="0" y="0" width="900" height="580" fill="url(#dotp)"/>
+<text x="36" y="42" fill="#3987e5" font-size="15" font-weight="700" letter-spacing="3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PIPELINE</text>
+<text x="36" y="78" fill="#f3f6f9" font-size="25" font-weight="700">From a spreadsheet nobody labelled to a coded dataset</text>
+<rect x="36" y="92" width="130" height="2.5" fill="url(#rlp)"/>
+<rect x="41" y="128" width="182" height="96" fill="url(#ndp)" stroke="#3a4552" stroke-width="1.6" rx="4"/>
+<text x="132" y="158" fill="#f3f6f9" font-size="17" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">discover</text>
+<text x="132" y="186" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">scan free-text cols</text>
+<text x="132" y="208" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">no header trust</text>
+<line x1="223" y1="176" x2="247" y2="176" stroke="#5a6673" stroke-width="1.8" marker-end="url(#arp)"/>
+<rect x="253" y="128" width="182" height="96" fill="url(#ndp)" stroke="#3987e5" stroke-width="1.6" rx="4"/>
+<text x="344" y="158" fill="#6fa8ec" font-size="17" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">infer</text>
+<text x="344" y="186" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">sample the answers</text>
+<text x="344" y="208" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">recover the question</text>
+<line x1="435" y1="176" x2="459" y2="176" stroke="#5a6673" stroke-width="1.8" marker-end="url(#arp)"/>
+<rect x="465" y="128" width="182" height="96" fill="url(#ndp)" stroke="#3987e5" stroke-width="1.6" rx="4"/>
+<text x="556" y="158" fill="#6fa8ec" font-size="17" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cluster</text>
+<text x="556" y="186" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">3 to 5 themes</text>
+<text x="556" y="208" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">all participants</text>
+<line x1="647" y1="176" x2="671" y2="176" stroke="#5a6673" stroke-width="1.8" marker-end="url(#arp)"/>
+<rect x="677" y="128" width="182" height="96" fill="url(#ndp)" stroke="#199e70" stroke-width="1.6" rx="4"/>
+<text x="768" y="158" fill="#35b183" font-size="17" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">verify</text>
+<text x="768" y="186" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resolve quote ids</text>
+<text x="768" y="208" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">against source rows</text>
+<text x="41" y="118" fill="#5c6773" font-size="15" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">one Excel file in</text>
+<line x1="768" y1="224" x2="768" y2="268" stroke="#199e70" stroke-width="1.8" marker-end="url(#argp)"/>
+<rect x="636" y="270" width="228" height="74" fill="#141d27" stroke="#8f9aa6" stroke-width="1.6" rx="4"/>
+<text x="750" y="300" fill="#f3f6f9" font-size="17" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">summarize</text>
+<text x="750" y="326" fill="#7d8896" font-size="14" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">second model, warmer tone</text>
+<rect x="36" y="268" width="560" height="106" fill="#0a0e12" stroke="#4a5663" stroke-width="1.3" stroke-dasharray="6 5" rx="4"/>
+<text x="58" y="296" fill="#c8d2dc" font-size="15" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">the three invariants the pipeline enforces</text>
+<text x="58" y="320" fill="#7d8896" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">every participant lands in exactly one theme</text>
+<text x="58" y="340" fill="#7d8896" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">no quote is reused across themes</text>
+<text x="58" y="360" fill="#7d8896" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">every quote id resolves to a real response</text>
+<line x1="316" y1="374" x2="316" y2="398" stroke="#5a6673" stroke-width="1.6" marker-end="url(#arp)"/>
+<line x1="750" y1="344" x2="750" y2="398" stroke="#5a6673" stroke-width="1.6" marker-end="url(#arp)"/>
+<rect x="36" y="400" width="250" height="72" fill="#1c130e" stroke="#d95926" stroke-width="1.6" rx="4"/>
+<text x="161.0" y="428" fill="#e0763f" font-size="16" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">results.json</text>
+<text x="161.0" y="452" fill="#7d8896" font-size="13" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">themes, ids, quotes</text>
+<rect x="330" y="400" width="264" height="72" fill="#1c130e" stroke="#d95926" stroke-width="1.6" rx="4"/>
+<text x="462.0" y="428" fill="#e0763f" font-size="16" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">per-question .xlsx</text>
+<text x="462.0" y="452" fill="#7d8896" font-size="13" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">one per question + combined</text>
+<rect x="700" y="400" width="164" height="72" fill="#1c130e" stroke="#d95926" stroke-width="1.6" rx="4"/>
+<text x="782.0" y="428" fill="#e0763f" font-size="16" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">report.md</text>
+<text x="782.0" y="452" fill="#7d8896" font-size="13" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">human layer</text>
+<text x="36" y="512" fill="#7d8896" font-size="15" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Two models, split by what each is good at: one proposes structure and assigns people to it, the other writes the</text>
+<text x="36" y="534" fill="#7d8896" font-size="15" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">prose a stakeholder reads. The interesting engineering is not the call to either model, it is the layer underneath</text>
+<text x="36" y="556" fill="#7d8896" font-size="15" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">that refuses to ship a theme set where somebody went missing or a quote cannot be traced back to who said it.</text>
+</svg>

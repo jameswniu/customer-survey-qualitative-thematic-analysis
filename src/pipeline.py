@@ -20,9 +20,23 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from anthropic import Anthropic
 from openai import OpenAI
 
-# Set up API clients
-claude = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+# API clients are built on first use, not at import. Every pure function in this
+# module (parsing, dedup, prompt assembly) is testable without credentials, and
+# constructing the clients eagerly made the whole test suite uncollectable on a
+# clean checkout.
+_clients: dict = {}
+
+
+def _claude():
+    if "claude" not in _clients:
+        _clients["claude"] = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+    return _clients["claude"]
+
+
+def _openai():
+    if "openai" not in _clients:
+        _clients["openai"] = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    return _clients["openai"]
 
 # Model configuration
 CLAUDE_MODEL = "claude-opus-4-5-20251101"  # Heavy lifting: inference, themes
@@ -175,7 +189,7 @@ def get_user_response(transcript):
 
 def ask_claude(prompt, temperature=0):
     """Send a prompt to Claude Opus 4.5 for extraction tasks."""
-    response = claude.messages.create(
+    response = _claude().messages.create(
         model=CLAUDE_MODEL,
         max_tokens=8192,
         temperature=temperature,
@@ -186,7 +200,7 @@ def ask_claude(prompt, temperature=0):
 
 def ask_gpt(prompt):
     """Send a prompt to GPT-5.1 for summaries."""
-    response = openai_client.chat.completions.create(
+    response = _openai().chat.completions.create(
         model=OPENAI_MODEL,
         max_completion_tokens=1024,
         temperature=0.5,  # Natural variation for summaries

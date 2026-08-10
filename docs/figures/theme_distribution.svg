@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-label="Theme distribution across six survey questions, showing how 495 participants partition into 26 themes" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bgd" x1="0" y1="0" x2="0.75" y2="1">
+    <stop offset="0" stop-color="#12161c"/><stop offset="0.55" stop-color="#0c1013"/><stop offset="1" stop-color="#080a0d"/>
+  </linearGradient>
+  <pattern id="dotd" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#161d26"/></pattern>
+  <linearGradient id="ndd" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#19212b"/><stop offset="1" stop-color="#111820"/>
+  </linearGradient>
+  <linearGradient id="rld" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3987e5" stop-opacity="0.95"/><stop offset="1" stop-color="#3987e5" stop-opacity="0"/>
+  </linearGradient>
+  <marker id="ard" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a6673"/></marker>
+  <marker id="argd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#199e70"/></marker>
+  <marker id="arod" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d95926"/></marker>
+  <marker id="arbd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3987e5"/></marker>
+</defs>
+<rect x="0" y="0" width="900" height="560" fill="url(#bgd)"/>
+<rect x="0" y="0" width="900" height="560" fill="url(#dotd)"/>
+<text x="36" y="42" fill="#3987e5" font-size="15" font-weight="700" letter-spacing="3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">SHIPPED RESULT</text>
+<text x="36" y="78" fill="#f3f6f9" font-size="25" font-weight="700">How 495 participants partitioned into 26 themes</text>
+<rect x="36" y="92" width="130" height="2.5" fill="url(#rld)"/>
+<text x="258" y="158" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">unmet needs always avail</text>
+<rect x="268.0" y="136" width="283.4" height="32" fill="#3987e5" rx="3"/>
+<text x="411.20754716981133" y="158" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">52%</text>
+<rect x="554.4" y="136" width="101.2" height="32" fill="#199e70" rx="3"/>
+<text x="606.4905660377359" y="158" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">19%</text>
+<rect x="658.6" y="136" width="85.5" height="32" fill="#d95926" rx="3"/>
+<text x="702.8301886792452" y="158" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">16%</text>
+<rect x="747.1" y="136" width="69.9" height="32" fill="#8f9aa6" rx="3"/>
+<text x="783.5471698113207" y="158" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">13%</text>
+<text x="830" y="158" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=106</text>
+<text x="258" y="214" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">unmet needs private location</text>
+<rect x="268.0" y="192" width="262.6" height="32" fill="#3987e5" rx="3"/>
+<text x="400.79245283018867" y="214" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">48%</text>
+<rect x="533.6" y="192" width="137.6" height="32" fill="#199e70" rx="3"/>
+<text x="603.8867924528302" y="214" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">25%</text>
+<rect x="674.2" y="192" width="111.6" height="32" fill="#d95926" rx="3"/>
+<text x="731.4716981132075" y="214" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">21%</text>
+<rect x="788.8" y="192" width="28.2" height="32" fill="#8f9aa6" rx="3"/>
+<text x="830" y="214" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=106</text>
+<text x="258" y="270" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">vpn selection</text>
+<rect x="268.0" y="248" width="291.4" height="32" fill="#3987e5" rx="3"/>
+<text x="415.2" y="270" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">53%</text>
+<rect x="562.4" y="248" width="102.1" height="32" fill="#199e70" rx="3"/>
+<text x="614.9714285714285" y="270" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">19%</text>
+<rect x="667.5" y="248" width="91.6" height="32" fill="#d95926" rx="3"/>
+<text x="714.8571428571428" y="270" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">17%</text>
+<rect x="762.2" y="248" width="54.8" height="32" fill="#8f9aa6" rx="3"/>
+<text x="791.0857142857143" y="270" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">10%</text>
+<text x="830" y="270" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=105</text>
+<text x="258" y="326" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">current vpn feedback</text>
+<rect x="268.0" y="304" width="373.4" height="32" fill="#3987e5" rx="3"/>
+<text x="456.1818181818182" y="326" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">68%</text>
+<rect x="644.4" y="304" width="53.5" height="32" fill="#199e70" rx="3"/>
+<text x="672.5909090909091" y="326" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">10%</text>
+<rect x="700.8" y="304" width="47.2" height="32" fill="#d95926" rx="3"/>
+<rect x="751.0" y="304" width="34.6" height="32" fill="#8f9aa6" rx="3"/>
+<rect x="788.6" y="304" width="28.4" height="32" fill="#6fa8ec" rx="3"/>
+<text x="830" y="326" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=88</text>
+<text x="258" y="382" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">remove data steps probe yes</text>
+<rect x="268.0" y="360" width="162.6" height="32" fill="#3987e5" rx="3"/>
+<text x="350.8" y="382" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">30%</text>
+<rect x="433.6" y="360" width="135.0" height="32" fill="#199e70" rx="3"/>
+<text x="502.6" y="382" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">25%</text>
+<rect x="571.6" y="360" width="116.6" height="32" fill="#d95926" rx="3"/>
+<text x="631.4" y="382" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">22%</text>
+<rect x="691.2" y="360" width="70.6" height="32" fill="#8f9aa6" rx="3"/>
+<text x="728.0" y="382" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">13%</text>
+<rect x="764.8" y="360" width="52.2" height="32" fill="#6fa8ec" rx="3"/>
+<text x="792.4000000000001" y="382" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">10%</text>
+<text x="830" y="382" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=60</text>
+<text x="258" y="438" fill="#9aa5b1" font-size="15" text-anchor="end" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">remove data steps probe no</text>
+<rect x="268.0" y="416" width="199.4" height="32" fill="#3987e5" rx="3"/>
+<text x="369.2" y="438" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">37%</text>
+<rect x="470.4" y="416" width="162.6" height="32" fill="#199e70" rx="3"/>
+<text x="553.1999999999999" y="438" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">30%</text>
+<rect x="636.0" y="416" width="125.8" height="32" fill="#d95926" rx="3"/>
+<text x="700.4" y="438" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">23%</text>
+<rect x="764.8" y="416" width="52.2" height="32" fill="#8f9aa6" rx="3"/>
+<text x="792.4" y="438" fill="#0c1013" font-size="14" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">10%</text>
+<text x="830" y="438" fill="#5c6773" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">n=30</text>
+<text x="268" y="126" fill="#7d8896" font-size="14" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">each bar is one question; segments are its themes, largest first</text>
+<text x="36" y="496" fill="#7d8896" font-size="15" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Theme counts sum to the participant count on all six questions, so the segments are a true partition rather than</text>
+<text x="36" y="518" fill="#7d8896" font-size="15" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">overlapping tags. One question totals 99% instead of 100% because the published percentages are integers.</text>
+</svg>

@@ -1,38 +1,102 @@
-# Agentic Research for Thematic Analysis Insights
+<p align="center">
+  <img src="assets/hero.svg" alt="Codebook-free thematic coding: 495 open-ended responses classified into 26 themes with every quote verified against its source row" width="100%">
+</p>
 
-**Turn messy survey responses into clean research insights, automatically.**
+<div align="center">
 
-Drop in an Excel file, get back organized themes with quotes and executive summaries. Uses Claude Opus 4.5 to find patterns and GPT-5.1 to write the summaries.
+<b><font size="6">Agentic Research for Thematic Analysis</font></b>
 
-## Overview
+<br/>
 
-Manual coding takes forever. This pipeline reads your survey responses, figures out what questions were asked, groups similar answers into themes, and picks the best quotes to back them up. What used to take a research team hours now runs in minutes.
+<img alt="python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-dfe3e0?style=flat-square&labelColor=0c1013">
+<img alt="themes Claude Opus 4.5" src="https://img.shields.io/badge/themes-Claude_Opus_4.5-8f9491?style=flat-square&labelColor=0c1013">
+<img alt="summaries GPT-5.1" src="https://img.shields.io/badge/summaries-GPT--5.1-8f9491?style=flat-square&labelColor=0c1013">
+<img alt="shipped run 495 participants" src="https://img.shields.io/badge/shipped_run-495_participants-8f9491?style=flat-square&labelColor=0c1013">
+<img alt="tests 22 passing" src="https://img.shields.io/badge/tests-22_passing_no_API_key-8f9491?style=flat-square&labelColor=0c1013">
+<img alt="license Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-8f9491?style=flat-square&labelColor=0c1013">
 
-What's inside:
+<br/><br/>
 
-- Auto-detects questions from how people responded (not just column names)
-- Finds 3-5 natural themes per question based on semantic clustering
-- Picks quotes that actually support each theme (model selects best matches)
-- No duplicate quotes across themes (tracked globally)
-- Outputs JSON for your tools + Markdown for humans
+<strong>Thematic coding of open-ended survey text, with no predefined codebook.</strong><br/>
+The model proposes the themes. The pipeline is what refuses to ship a result<br/>
+where somebody went missing or a quote cannot be traced back to who said it.
 
-### Why Two Models?
+<br/>
 
-Claude Opus 4.5 handles the heavy lifting: parsing transcripts, assigning participants to themes, selecting quote IDs. It's precise and follows structured output formats well. GPT-5.1 writes the headlines and summaries with a warmer, more executive tone. Each model does what it's best at.
+<code>discover -> infer -> cluster -> verify</code>
 
-### Temperature Settings
+</div>
 
-Different tasks need different creativity levels:
+---
 
-| Task | Model | Temp | Why |
-|------|-------|------|-----|
-| Question inference | Claude | 0.3 | Natural phrasing without hallucination |
-| Theme extraction | Claude | 0.3 | Balance accuracy with natural descriptions |
-| Summary generation | GPT | 0.5 | Varied, natural executive language |
+## The problem with letting a model code your data
+
+Hand a language model 500 free-text survey answers and ask for themes, and it will give you themes. It will also, quietly:
+
+- drop the people who did not fit neatly, so your percentages describe a subset you cannot name
+- reuse the same vivid quote under three different themes, which makes weak themes look independently supported
+- produce a quote that reads perfectly and appears nowhere in your data
+
+None of those failures announce themselves. The output looks clean either way, which is exactly the problem: a thematic analysis is a claim about what a population said, and a claim you cannot audit is not evidence. The interesting engineering here is not the call to either model. It is the layer underneath that decides whether the model's answer is allowed to ship.
+
+## What it actually does
+
+<p align="center">
+  <img src="assets/pipeline.svg" alt="Pipeline: discover free-text columns, infer the question from the answers, cluster into themes and assign every participant, verify quotes against source rows, then write the executive summary with a second model" width="100%">
+</p>
+
+<details>
+<summary>Graph source for this pipeline</summary>
+
+```mmd
+flowchart LR
+    X["Excel file, no schema assumed"] --> D["discover: scan for free-text columns"]
+    D --> I["infer: recover the question from the answers"]
+    I --> C["cluster: 3 to 5 themes, assign every participant"]
+    C --> V["verify: resolve quote ids against source rows"]
+    V --> S["summarize: second model, warmer tone"]
+    V --> J["results.json"]
+    V --> XL["per-question .xlsx + combined sheet"]
+    S --> MD["report.md"]
+```
+
+</details>
+
+**Discover.** Column headers in survey exports are unreliable (`Q7_open`, `unmet_needs_2`, or a truncated fragment of the question). So the ID column and the free-text columns are found by inspecting the values, not by trusting names.
+
+**Infer.** The question is reconstructed from a sample of the answers themselves. If a hundred people describe getting locked out of a service, the question was about access friction, whatever the header says. This runs at temperature 0.3: enough freedom to phrase it naturally, not enough to invent a question nobody was asked.
+
+**Cluster.** Themes come from the shape of the data, 3 to 5 per question, and every participant is assigned to exactly one. Also 0.3.
+
+**Verify.** The model returns quote *ids*, never quote text. Ids are resolved against the source rows, so a fabricated quote cannot survive the round trip: it has no id to resolve. Quotes are then deduplicated globally, capped at three per theme.
+
+**Summarize.** A different model at 0.5 writes the headline and executive summary. Splitting it is deliberate: the task that must not drift (assigning real people to real categories) and the task that benefits from drift (readable prose) should not share a temperature.
+
+## The receipts
+
+Every number below is re-derived from `output/results.json` by `docs/generate_visuals.py`, not typed by hand.
+
+| Invariant | Checked | Result |
+|---|---|---|
+| Every participant is classified | `len(classifications) == n_participants`, per question | **495 / 495**, 6 of 6 questions |
+| Themes partition the population | `sum(theme.count) == n_participants` | **6 of 6** questions exact |
+| No quote is reused across themes | quote ids unique within a question | **0** reuses across 78 quote slots |
+| No classification names a phantom theme | every label resolves to a real theme | **0** orphans |
+
+<p align="center">
+  <img src="docs/figures/theme_distribution.svg" alt="Theme distribution across six survey questions showing how 495 participants partitioned into 26 themes" width="100%">
+</p>
+
+The shipped run covers 6 questions and 495 participants from a VPN research study, producing 26 themes. One question's percentages total 99 rather than 100 because the published values are integers; the underlying counts still sum exactly.
 
 ## How It Works
 
-```mermaid
+The diagram above is the shape of it. The full graph, including every subgraph and the exact node names, is below as source rather than a second rendered picture.
+
+<details>
+<summary>Full graph source</summary>
+
+```mmd
 %%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 26, 'rankSpacing': 52, 'padding': 16}}}%%
 flowchart TB
     subgraph Input["Input"]
@@ -128,6 +192,9 @@ flowchart TB
     style Processing fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
     style Output fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
 ```
+
+</details>
+
 
 ## What It Does
 

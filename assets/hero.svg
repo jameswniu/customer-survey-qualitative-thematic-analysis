@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="900" height="340" role="img" aria-label="Codebook-free thematic coding: 495 open-ended responses classified into 26 themes with every quote verified against its source row" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+<defs>
+  <linearGradient id="bgh" x1="0" y1="0" x2="0.75" y2="1">
+    <stop offset="0" stop-color="#12161c"/><stop offset="0.55" stop-color="#0c1013"/><stop offset="1" stop-color="#080a0d"/>
+  </linearGradient>
+  <pattern id="doth" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#161d26"/></pattern>
+  <linearGradient id="ndh" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#19212b"/><stop offset="1" stop-color="#111820"/>
+  </linearGradient>
+  <linearGradient id="rlh" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3987e5" stop-opacity="0.95"/><stop offset="1" stop-color="#3987e5" stop-opacity="0"/>
+  </linearGradient>
+  <marker id="arh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a6673"/></marker>
+  <marker id="argh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#199e70"/></marker>
+  <marker id="aroh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d95926"/></marker>
+  <marker id="arbh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3987e5"/></marker>
+</defs>
+<rect x="0" y="0" width="900" height="340" fill="url(#bgh)"/>
+<rect x="0" y="0" width="900" height="340" fill="url(#doth)"/>
+
+<text x="40" y="46" fill="#3987e5" font-size="14" font-weight="700" letter-spacing="3.2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">QUALITATIVE CODING / LLM PIPELINE</text>
+<text x="40" y="102" fill="#f3f6f9" font-size="35" font-weight="700">Nothing invented.</text>
+<text x="40" y="146" fill="#f3f6f9" font-size="35" font-weight="700">Nothing dropped.</text>
+<rect x="40" y="168" width="150" height="2.5" fill="url(#rlh)"/>
+<text x="40" y="200" fill="#9aa5b1" font-size="16">Thematic coding of open-ended survey text, no codebook</text>
+<text x="40" y="224" fill="#9aa5b1" font-size="16">required. The model proposes the themes; the pipeline</text>
+<text x="40" y="248" fill="#9aa5b1" font-size="16">enforces that nobody goes missing and no quote is faked.</text>
+<rect x="40" y="278" width="96" height="28" fill="url(#ndh)" stroke="#3a4552" stroke-width="1.2" rx="3"/>
+<text x="88.0" y="297" fill="#9aa5b1" font-size="15" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">detect</text>
+<rect x="148" y="278" width="88" height="28" fill="url(#ndh)" stroke="#3a4552" stroke-width="1.2" rx="3"/>
+<text x="192.0" y="297" fill="#9aa5b1" font-size="15" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">infer</text>
+<rect x="248" y="278" width="104" height="28" fill="url(#ndh)" stroke="#3a4552" stroke-width="1.2" rx="3"/>
+<text x="300.0" y="297" fill="#9aa5b1" font-size="15" text-anchor="middle" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cluster</text>
+<rect x="364" y="278" width="100" height="28" fill="#141d27" stroke="#8f9aa6" stroke-width="1.8" rx="3"/>
+<text x="414.0" y="297" fill="#f3f6f9" font-size="15" text-anchor="middle" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">verify</text>
+<rect x="500" y="52" width="364" height="254" fill="#0a0e12" stroke="#212b36" stroke-width="1.2" rx="4"/>
+<text x="518" y="80" fill="#7d8896" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">CHECKED AGAINST THE SHIPPED OUTPUT</text>
+<text x="518" y="116" fill="#199e70" font-size="18" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">495 / 495</text>
+<text x="628" y="116" fill="#9aa5b1" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">participants classified</text>
+<text x="518" y="154" fill="#199e70" font-size="18" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">78 / 78</text>
+<text x="628" y="154" fill="#9aa5b1" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quotes traced to source</text>
+<text x="518" y="192" fill="#199e70" font-size="18" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">6 / 6</text>
+<text x="628" y="192" fill="#9aa5b1" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">questions partition exactly</text>
+<text x="518" y="230" fill="#199e70" font-size="18" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">0</text>
+<text x="628" y="230" fill="#9aa5b1" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">orphaned classifications</text>
+<text x="518" y="268" fill="#199e70" font-size="18" text-anchor="start" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">0</text>
+<text x="628" y="268" fill="#9aa5b1" font-size="13" text-anchor="start" font-weight="400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quotes reused across themes</text>
+</svg>
