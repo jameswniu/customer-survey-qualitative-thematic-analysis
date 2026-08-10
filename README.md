@@ -58,6 +58,15 @@ Four stages and the guarantees each one owes the next. The full node-level archi
 
 **Summarize.** A different model at 0.5 writes the headline and executive summary. Splitting it is deliberate: the task that must not drift (assigning real people to real categories) and the task that benefits from drift (readable prose) should not share a temperature.
 
+Three things that only show up at runtime:
+
+| | |
+|---|---|
+| **Parallel by question** | questions are analysed concurrently, 6 workers by default, so wall-clock is roughly one question rather than six |
+| **Project background** | optional research context is passed into the theme prompt, which keeps themes relevant to the study rather than generically plausible |
+| **Classification export** | every run writes a per-question `.xlsx` of participant to theme mappings, plus a combined sheet, so an analyst can audit or re-code by hand |
+
+
 ## How It Works
 
 The full architecture, every stage and both models, with the colour showing which model owns which step:
@@ -175,31 +184,6 @@ Every number below is re-derived from `output/results.json` by `docs/generate_vi
 </p>
 
 The shipped run covers 6 questions and 495 participants from a VPN research study, producing 26 themes. One question's percentages total 99 rather than 100 because the published values are integers; the underlying counts still sum exactly.
-
-## What It Does
-
-- Reads any Excel file with survey responses
-- Auto-detects which columns are questions
-- Infers the actual question text from responses (not just column names)
-- Groups responses into 3-5 themes per question (based on natural clustering)
-- Picks representative quotes without duplicates
-- Writes executive summaries
-- Outputs JSON and Markdown
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| Dual Model | Claude Opus 4.5 for extraction, GPT-5.1 for summaries |
-| Project Background | Pass research context to improve theme relevance |
-| Question Inference | Figures out what was asked by looking at responses |
-| Dynamic Columns | Extracts question columns automatically from your Excel |
-| Variable Themes | 3-5 themes based on natural clustering in the data |
-| Parallel Analysis | Questions analyzed concurrently (6 workers default) |
-| Classification Export | Excel files showing participant → theme mappings |
-| Quote Validation | Verifies quotes exist in source data |
-| Senior Research Tone | Authoritative, $500/hour consultant voice |
-| Unique Quotes | No quote appears twice across themes |
 
 ## Setup
 
@@ -342,18 +326,10 @@ pytest tests/ -v
 
 ## Design Discussion
 
-### Approach
-
-- **Dual-model architecture**: Claude Opus 4.5 handles structured extraction (theme generation, participant classification, quote selection) because it follows JSON schemas reliably. GPT-5.1 writes summaries because it produces more natural executive prose.
-- **Question inference from responses**: Rather than relying on cryptic column names like `vpn_selection`, the pipeline samples responses and infers what question was actually asked. This makes the output immediately usable without manual mapping.
-- **Semantic theme generation**: Themes are generated based on response content, not keyword matching. The prompt instructs the model to find 3-5 natural clusters with appropriate generality.
-
 ### Design Decisions
 
 - **Temperature tuning**: Theme extraction uses 0.3 (was 0.1, raised for more natural descriptions) to balance accuracy with varied language. Summaries use 0.5 for natural variation. Question inference uses 0.3 for fluent phrasing.
 - **3-5 themes default**: The prompt explicitly discourages defaulting to 5 themes. Fewer themes with stronger cohesion beats more themes with overlap.
-- **Quote selection via `best_quote_ids`**: The model selects the 3 participant IDs whose quotes best support each theme description, then we fetch verbatim quotes from source data. This prevents hallucination.
-- **Global quote deduplication**: Quotes are tracked across all themes per question. No quote appears twice.
 - **One quote per participant per theme**: Each theme can only cite a given participant once.
 - **100% classification enforcement**: Post-processing ensures every participant is assigned to exactly one theme, even if the model misses some.
 
