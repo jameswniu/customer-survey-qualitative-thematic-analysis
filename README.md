@@ -33,7 +33,7 @@ Different tasks need different creativity levels:
 ## How It Works
 
 ```mermaid
-%%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 18, 'rankSpacing': 30, 'padding': 10}}}%%
+%%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 26, 'rankSpacing': 52, 'padding': 16}}}%%
 flowchart TB
     subgraph Input["Input"]
         EXCEL[("Excel File")]
@@ -41,7 +41,7 @@ flowchart TB
 
     subgraph Discovery["Column Discovery"]
         FIND_ID["Find ID Column"]
-        FIND_QS["Find Question Columns<br/>(auto-detect text responses)"]
+        FIND_QS["Find Question Columns<br/>auto-detect text responses"]
     end
 
     subgraph Inference["Question Inference"]
@@ -117,6 +117,16 @@ flowchart TB
     class INFER,CLAUDE1 claude
     class GPT1 gpt
     class JSON,MD out
+
+    style Input fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style Discovery fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style Inference fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style Analysis fill:#f5f7f8,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style ThemeGen fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style QuoteExt fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style SummaryGen fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style Processing fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
+    style Output fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
 ```
 
 ## What It Does
