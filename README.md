@@ -41,26 +41,12 @@ None of those failures announce themselves. The output looks clean either way, w
 
 ## What it actually does
 
+Four stages and the guarantees each one owes the next. The full node-level architecture is
+[further down](#how-it-works); this is the shape to hold in your head first.
+
 <p align="center">
   <img src="assets/pipeline.svg" alt="Pipeline: discover free-text columns, infer the question from the answers, cluster into themes and assign every participant, verify quotes against source rows, then write the executive summary with a second model" width="100%">
 </p>
-
-<details>
-<summary>Graph source for this pipeline</summary>
-
-```mmd
-flowchart LR
-    X["Excel file, no schema assumed"] --> D["discover: scan for free-text columns"]
-    D --> I["infer: recover the question from the answers"]
-    I --> C["cluster: 3 to 5 themes, assign every participant"]
-    C --> V["verify: resolve quote ids against source rows"]
-    V --> S["summarize: second model, warmer tone"]
-    V --> J["results.json"]
-    V --> XL["per-question .xlsx + combined sheet"]
-    S --> MD["report.md"]
-```
-
-</details>
 
 **Discover.** Column headers in survey exports are unreliable (`Q7_open`, `unmet_needs_2`, or a truncated fragment of the question). So the ID column and the free-text columns are found by inspecting the values, not by trusting names.
 
@@ -91,12 +77,9 @@ The shipped run covers 6 questions and 495 participants from a VPN research stud
 
 ## How It Works
 
-The diagram above is the shape of it. The full graph, including every subgraph and the exact node names, is below as source rather than a second rendered picture.
+The full architecture, every stage and both models, with the colour showing which model owns which step:
 
-<details>
-<summary>Full graph source</summary>
-
-```mmd
+```mermaid
 %%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 26, 'rankSpacing': 52, 'padding': 16}}}%%
 flowchart TB
     subgraph Input["Input"]
@@ -192,9 +175,6 @@ flowchart TB
     style Processing fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
     style Output fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
 ```
-
-</details>
-
 
 ## What It Does
 
