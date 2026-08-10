@@ -41,7 +41,7 @@ flowchart TB
 
     subgraph Discovery["Column Discovery"]
         FIND_ID["Find ID Column"]
-        FIND_QS["Find Question Columns<br/>auto-detect text responses"]
+        FIND_QS["Find Question Columns\nauto-detect text responses"]
     end
 
     subgraph Inference["Question Inference"]
