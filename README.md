@@ -58,23 +58,6 @@ Four stages and the guarantees each one owes the next. The full node-level archi
 
 **Summarize.** A different model at 0.5 writes the headline and executive summary. Splitting it is deliberate: the task that must not drift (assigning real people to real categories) and the task that benefits from drift (readable prose) should not share a temperature.
 
-## The receipts
-
-Every number below is re-derived from `output/results.json` by `docs/generate_visuals.py`, not typed by hand.
-
-| Invariant | Checked | Result |
-|---|---|---|
-| Every participant is classified | `len(classifications) == n_participants`, per question | **495 / 495**, 6 of 6 questions |
-| Themes partition the population | `sum(theme.count) == n_participants` | **6 of 6** questions exact |
-| No quote is reused across themes | quote ids unique within a question | **0** reuses across 78 quote slots |
-| No classification names a phantom theme | every label resolves to a real theme | **0** orphans |
-
-<p align="center">
-  <img src="docs/figures/theme_distribution.svg" alt="Theme distribution across six survey questions showing how 495 participants partitioned into 26 themes" width="100%">
-</p>
-
-The shipped run covers 6 questions and 495 participants from a VPN research study, producing 26 themes. One question's percentages total 99 rather than 100 because the published values are integers; the underlying counts still sum exactly.
-
 ## How It Works
 
 The full architecture, every stage and both models, with the colour showing which model owns which step:
@@ -176,6 +159,23 @@ flowchart TB
     style Output fill:#eceff1,stroke:#b0bec5,stroke-width:1px,color:#37474F
 ```
 
+## The receipts
+
+Every number below is re-derived from `output/results.json` by `docs/generate_visuals.py`, not typed by hand.
+
+| Invariant | Checked | Result |
+|---|---|---|
+| Every participant is classified | `len(classifications) == n_participants`, per question | **495 / 495**, 6 of 6 questions |
+| Themes partition the population | `sum(theme.count) == n_participants` | **6 of 6** questions exact |
+| No quote is reused across themes | quote ids unique within a question | **0** reuses across 78 quote slots |
+| No classification names a phantom theme | every label resolves to a real theme | **0** orphans |
+
+<p align="center">
+  <img src="docs/figures/theme_distribution.svg" alt="Theme distribution across six survey questions showing how 495 participants partitioned into 26 themes" width="100%">
+</p>
+
+The shipped run covers 6 questions and 495 participants from a VPN research study, producing 26 themes. One question's percentages total 99 rather than 100 because the published values are integers; the underlying counts still sum exactly.
+
 ## What It Does
 
 - Reads any Excel file with survey responses
@@ -268,6 +268,35 @@ Instead of guessing from column names like `vpn_selection`, the pipeline samples
 | current_vpn_feedback | What features do you wish your VPN had? |
 | remove_data_steps_probe_no | Would you be interested in removing your personal information from online databases? |
 
+## Output Format
+
+```json
+{
+  "column_name": {
+    "question": "What factors influenced your decision when choosing your VPN?",
+    "n_participants": 105,
+    "headline": "Key insight under 8 words",
+    "summary": "1-2 sentences with actionable recommendation",
+    "themes": [
+      {
+        "title": "Theme title",
+        "description": "3-4 sentences. Senior researcher voice.",
+        "pct": 38,
+        "quotes": [
+          {"participant_id": "4434", "quote": "What they said"}
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Example Output
+
+**Privacy and Security Focus** (37%)
+
+Privacy concerns dominate selection criteria, with no-logs policies ranking as the top priority. Encryption strength matters more than server count for this segment. Strong preference exists for transparent security certifications, and most participants specifically mention identity protection. This represents premium customers willing to pay for verified privacy.
+
 ## Project Structure
 
 ```
@@ -295,29 +324,6 @@ usercue-thematic-analysis/
 └── README.md
 ```
 
-## Output Format
-
-```json
-{
-  "column_name": {
-    "question": "What factors influenced your decision when choosing your VPN?",
-    "n_participants": 105,
-    "headline": "Key insight under 8 words",
-    "summary": "1-2 sentences with actionable recommendation",
-    "themes": [
-      {
-        "title": "Theme title",
-        "description": "3-4 sentences. Senior researcher voice.",
-        "pct": 38,
-        "quotes": [
-          {"participant_id": "4434", "quote": "What they said"}
-        ]
-      }
-    ]
-  }
-}
-```
-
 ## Configuration
 
 | Setting | Value | Purpose |
@@ -327,12 +333,6 @@ usercue-thematic-analysis/
 | Extraction Temp | 0.3 | Balanced accuracy and natural language |
 | Summary Temp | 0.5 | Natural language variation |
 | Inference Temp | 0.3 | Natural question phrasing |
-
-## Example Output
-
-**Privacy and Security Focus** (37%)
-
-Privacy concerns dominate selection criteria, with no-logs policies ranking as the top priority. Encryption strength matters more than server count for this segment. Strong preference exists for transparent security certifications, and most participants specifically mention identity protection. This represents premium customers willing to pay for verified privacy.
 
 ## Tests
 
