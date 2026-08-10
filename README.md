@@ -33,6 +33,7 @@ Different tasks need different creativity levels:
 ## How It Works
 
 ```mermaid
+%%{init: {'flowchart': {'curve': 'linear', 'nodeSpacing': 18, 'rankSpacing': 30, 'padding': 10}}}%%
 flowchart TB
     subgraph Input["Input"]
         EXCEL[("Excel File")]
@@ -81,7 +82,7 @@ flowchart TB
 
     EXCEL --> FIND_ID
     EXCEL --> FIND_QS
-    FIND_QS --> SAMPLE
+    FIND_QS -- "text columns" --> SAMPLE
     SAMPLE --> INFER
     
     INFER --> PROMPT1
@@ -90,9 +91,9 @@ flowchart TB
     
     PARSE1 --> LOOKUP
     LOOKUP --> UNIQUE
-    UNIQUE --> LIMIT
+    UNIQUE -- "max 3" --> LIMIT
     
-    PARSE1 --> CALC
+    PARSE1 -- "theme sizes" --> CALC
     CALC --> SORT
     SORT --> PROMPT2
     
@@ -102,14 +103,20 @@ flowchart TB
     LIMIT --> CLEAN
     PARSE2 --> CLEAN
     
-    CLEAN --> JSON
-    JSON --> MD
+    CLEAN -- "machine" --> JSON
+    JSON -- "human" --> MD
 
-    style CLAUDE1 fill:#d4a574,stroke:#333
-    style GPT1 fill:#74b9d4,stroke:#333
-    style INFER fill:#d4a574,stroke:#333
-    style JSON fill:#d4edda,stroke:#333
-    style MD fill:#d4edda,stroke:#333
+    classDef src fill:#4CAF50,color:#fff,stroke:#2E7D32,stroke-width:2px
+    classDef proc fill:#78909C,color:#fff,stroke:#455A64,stroke-width:2px
+    classDef claude fill:#FFA726,color:#fff,stroke:#E65100,stroke-width:2px
+    classDef gpt fill:#5C6BC0,color:#fff,stroke:#303F9F,stroke-width:2px
+    classDef out fill:#EF5350,color:#fff,stroke:#C62828,stroke-width:2px
+
+    class EXCEL src
+    class FIND_ID,FIND_QS,SAMPLE,PROMPT1,PARSE1,LOOKUP,UNIQUE,LIMIT,PROMPT2,PARSE2,CALC,SORT,CLEAN proc
+    class INFER,CLAUDE1 claude
+    class GPT1 gpt
+    class JSON,MD out
 ```
 
 ## What It Does
