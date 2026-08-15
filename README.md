@@ -8,7 +8,6 @@
 
 <br/>
 
-<img alt="golden repo" src="https://img.shields.io/badge/%E2%98%85-golden_repo-d4a017?style=flat-square&labelColor=0c1013">
 <img alt="python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-dfe3e0?style=flat-square&labelColor=0c1013">
 <img alt="themes Claude Opus 4.5" src="https://img.shields.io/badge/themes-Claude_Opus_4.5-8f9491?style=flat-square&labelColor=0c1013">
 <img alt="summaries GPT-5.1" src="https://img.shields.io/badge/summaries-GPT--5.1-8f9491?style=flat-square&labelColor=0c1013">
