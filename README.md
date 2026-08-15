@@ -294,7 +294,7 @@ Privacy concerns dominate selection criteria, with no-logs policies ranking as t
 ## Project Structure
 
 ```
-usercue-thematic-analysis/
+customer-survey-qualitative-thematic-analysis/
 ├── src/
 │   ├── __init__.py
 │   ├── pipeline.py        # Main analysis
